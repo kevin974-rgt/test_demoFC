@@ -5,7 +5,7 @@ void main() {
   group('validations of input <DNI>', () {
     test('validate the input has 10 characters', () {
       //arrange
-      final dniService = DniService('');
+      final dniService = DniService('1002003001');
       //fact
       final lenght =dniService.dnilenght();
       //assert
