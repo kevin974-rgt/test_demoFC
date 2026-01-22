@@ -5,6 +5,9 @@ class InputWitget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(decoration: InputDecoration(label: Text('Cédula')));
+    return TextFormField(
+      key: const Key('dniInput'),
+      decoration: InputDecoration(label: Text('Cédula')),
+    );
   }
 }
