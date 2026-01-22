@@ -14,4 +14,17 @@ class DniService {
   void setDni(String val) {
     dni = val;
   }
+
+  bool isThirdCharacterLessThanSix(String dni) {
+
+    
+
+
+    if (dni.length != 10) return false;
+
+    final thirdChar = int.tryParse(dni[2]);
+    if (thirdChar == null) return false;
+
+    return thirdChar < 6;
+  }
 }
