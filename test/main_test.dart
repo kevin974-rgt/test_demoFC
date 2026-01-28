@@ -30,9 +30,9 @@ void main() {
     testWidgets('added dni', (WidgetTester tester) async {
       // arrange
       final input = find.byKey(const Key('dniInput'));
-      await tester.pumpWidget(MaterialApp(home: InputWitget()));//renderizar
+      await tester.pumpWidget(MaterialApp(home: InputWitget()));
       // act
-      await tester.enterText(input, '1005263411');//tomamos un tester ingresando texto
+      await tester.enterText(input, '1005263411');
       await tester.pump();
       // assert
       expect(find.text('1005263411'), findsOneWidget);

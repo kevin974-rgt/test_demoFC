@@ -73,7 +73,7 @@ class DniService {
     } else {
       print('DNI inválido');
     }
-    
+
     // Tercer dígito
     final thirdChar = int.tryParse(dni[2]);
     if (thirdChar == null) return null;

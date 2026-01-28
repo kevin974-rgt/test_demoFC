@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:test_demo/screens/home_page.dart';
 
 void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  @override
   Widget build(BuildContext context) {
+    //final GlobalKey<FormState> formKey = GlobalKey(FormState);
     return const MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: HomePage(),
+        body: Form(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [],
+          ),
         ),
       ),
     );

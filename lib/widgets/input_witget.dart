@@ -5,9 +5,17 @@ class InputWitget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      key: const Key('dniInput'),
-      decoration: InputDecoration(label: Text('Cédula')),
+    return Column(
+      children: [
+        TextFormField(
+          key: const Key('dniInput'),
+          decoration: InputDecoration(label: Text('Cédula')),
+        ),
+        IconButton(onPressed: (){
+
+        }, icon: Icon(Icons.add))
+        
+      ],
     );
   }
 }
