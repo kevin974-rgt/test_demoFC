@@ -34,13 +34,13 @@ class _MainAppState extends State<MainApp> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: dniCtrl,
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     labelText: 'DNI',
                     border: OutlineInputBorder(),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
