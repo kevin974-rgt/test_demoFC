@@ -35,5 +35,15 @@ void main() {
 
       expect(textField.controller!.text, isEmpty);
     });
+    testWidgets('Validating only numbers in textformfield',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(const MainApp());
+
+      final dniInput = find.byType(TextFormField);
+      await tester.enterText(dniInput,'123abc456');
+      await tester.pump();
+
+      expect(textField.controller!.text, isEmpty);
+    });
   });
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MainApp());
@@ -33,19 +34,23 @@ class _MainAppState extends State<MainApp> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  key: const Key('dniInput'),
                   controller: dniCtrl,
                   keyboardType: TextInputType.number,
+                  //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))],
                   decoration: const InputDecoration(
                     labelText: 'DNI',
                     border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    dniCtrl.text = value.replaceAll(RegExp(r'[^0-9]'), '');
+                    print(dniCtrl.text);
+                  },
                 ),
               ),
               ElevatedButton(
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    debugPrint('DNI: ${dniCtrl.text}');
-                  }
+                  if (formKey.currentState!.validate()) {}
                 },
                 child: const Text('Ingresar'),
               ),
