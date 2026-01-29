@@ -37,7 +37,7 @@ class _MainAppState extends State<MainApp> {
                   key: const Key('dniInput'),
                   controller: dniCtrl,
                   keyboardType: TextInputType.number,
-                  //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))],
+                  inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))],
                   decoration: const InputDecoration(
                     labelText: 'DNI',
                     border: OutlineInputBorder(),
