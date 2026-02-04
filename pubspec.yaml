@@ -9,11 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^1.2.0   # <-- dependencia para requests HTTP
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  mockito: ^5.0.0        # <-- mockito con null safety
+  build_runner: ^2.4.8   # <-- para generación de código
 
 flutter:
   uses-material-design: true

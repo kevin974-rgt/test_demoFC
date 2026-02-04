@@ -1,0 +1,40 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+/// Modelo Album
+class Album {
+  final int userId;
+  final int id;
+  final String title;
+
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      userId: json['userId'],
+      id: json['id'],
+      title: json['title'],
+    );
+  }
+}
+
+/// Servicio para obtener el álbum
+class FetchAlbum {
+  Future<Album> fetchAlbum(http.Client client) async {
+    final response = await client.get(
+      Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    );
+
+    if (response.statusCode == 200) {
+      return Album.fromJson(
+        jsonDecode(response.body) as Map<String, dynamic>,
+      );
+    } else {
+      throw Exception('Failed to load album');
+    }
+  }
+}
